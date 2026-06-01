@@ -69,13 +69,13 @@ function imgTemplate({ preview,original,description}) {
     </li>`;
 }
 
-function imgesTemlate(arrImges) { 
+function createImagesMarkup(arrImges) { 
     return arrImges.map(imgTemplate).join('');
 }
 
 // listener event load document
 document.addEventListener('DOMContentLoaded', () => { 
-    const markup = imgesTemlate(images);
+    const markup = createImagesMarkup(images);
     galleryElem.innerHTML = markup;
 
     let gallery = new SimpleLightbox('.gallery a', {
