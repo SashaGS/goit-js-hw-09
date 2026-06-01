@@ -56,7 +56,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 const galleryElem = document.querySelector('ul.gallery');
 
 // what paste
-function imgTemplate({ preview,description}) { 
+function imgTemplate({ preview,original,description}) { 
     return `
     <li class="gallery-item">
         <a class="gallery-link" href="${original}">
@@ -72,3 +72,17 @@ function imgTemplate({ preview,description}) {
 function imgesTemlate(arrImges) { 
     return arrImges.map(imgTemplate).join('');
 }
+
+// listener event load document
+document.addEventListener('DOMContentLoaded', () => { 
+    const markup = imgesTemlate(images);
+    galleryElem.innerHTML = markup;
+
+    let gallery = new SimpleLightbox('.gallery a', {
+        captions: true,              // вмикає підписи
+        captionsData: 'alt',         // джерело підпису — атрибут alt
+        captionPosition: 'bottom',   // позиція підпису знизу
+        captionDelay: 250            // затримка у мілісекундах
+    });
+});
+
