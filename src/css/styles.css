@@ -6,9 +6,9 @@
 */
 /* Common styles */
 @import url('./reset.css');
-@import url('./base.css');
+/* @import url('./base.css'); */
 @import url('./container.css');
-@import url('./animations.css');
+/* @import url('./animations.css'); */
 
 /* Sections style */
 @import url('./header.css');
@@ -24,6 +24,11 @@ ol {
 h1,
 h2 {
   margin: 0px;
+}
+
+input{
+  border: none;
+  border-style: none;
 }
 
 .wraper {
@@ -53,3 +58,50 @@ h2 {
   /* Увеличиваем картинку на 4.5% */
 }
 
+
+/* Form */
+
+.feedback-form{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-input-email{
+  height: 40px;
+  margin-bottom: 8px;
+  border:1px solid #808080;
+  border-radius: 4px;
+}
+
+.form-input-email:hover{
+  border-color: #000000;
+}
+
+.form-input-email:active{
+  border-color: #808080;
+}
+
+.form-message{
+  height: 80px;
+  margin-bottom: 16px;
+}
+
+.form-btn{
+  width: 95px;
+  padding: 16px 8px;
+  color: white;
+  background-color:#4E75FF ;
+  border-radius: 8px;
+  border-color: #808080;
+  border: none;
+}
+
+.form-btn:hover{
+  background-color: #6C8CFF;
+  cursor: pointer;
+}
+
+label{
+  color: #2E2F42;
+}
